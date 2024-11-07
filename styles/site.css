@@ -120,3 +120,59 @@ menu{
   display: flex;
   flex-direction: row;
 }
+
+/* General Styling */
+.header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links menu li {
+  margin-left: 15px;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hide navigation links and show hamburger on narrow screens */
+@media (max-width: 768px) {
+  .nav-links menu {
+    display: none; /* Hide links on narrow screens */
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top: 60px; /* Adjust as needed */
+    left: 0;
+    text-align: center;
+  }
+
+  .nav-links menu li {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  /* Show links when checkbox is checked */
+  #menu-toggle:checked + .hamburger + .nav-links menu {
+    display: flex;
+  }
+}
+
+/* Hide checkbox visually */
+.menu-toggle {
+  display: none;
+}
